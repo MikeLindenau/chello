@@ -437,6 +437,7 @@ TrelloPowerUp.initialize({
     // below determines what should happen when the user clicks "Authorize Account"
 
     t.get('board', 'private').then(function(d) {
+      console.log('hmmmmmmmmmmmmm')
       console.log(d)
     })
 
