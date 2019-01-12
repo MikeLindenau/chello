@@ -409,11 +409,7 @@ TrelloPowerUp.initialize({
     // throw t.NotHandled();
   },
   'show-settings': function(t, options) {
-    console.log('hmmmmmmmmmmmmm')
-    t.get('board', 'private').then(function(d) {
-      console.log('hmmmmmmmmmmmmm')
-      console.log({ d })
-    })
+    console.log({ context: t.getContext() })
     // when a user clicks the gear icon by your Power-Up in the Power-Ups menu
     // what should Trello show. We highly recommend the popup in this case as
     // it is the least disruptive, and fits in well with the rest of Trello's UX
