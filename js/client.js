@@ -90,6 +90,7 @@ var getBadges = function(t) {
     .get('name')
     .then(function(cardName) {
       console.log({ context: t.getContext() })
+      console.log({ context: t.get('board') })
       console.log('We just loaded the card name for fun: ' + cardName)
 
       return [
