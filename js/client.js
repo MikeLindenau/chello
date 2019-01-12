@@ -436,6 +436,10 @@ TrelloPowerUp.initialize({
     // they click on the Power-Up's gear icon in the settings. The 'show-authorization' capability
     // below determines what should happen when the user clicks "Authorize Account"
 
+    t.get('board', 'private').then(function(d) {
+      console.log(d)
+    })
+
     // For instance, if your Power-Up requires a token to be set for the member you could do the following:
     return t.get('member', 'private', 'token').then(function(token) {
       console.log(token)
