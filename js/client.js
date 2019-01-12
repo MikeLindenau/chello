@@ -409,7 +409,7 @@ TrelloPowerUp.initialize({
     // throw t.NotHandled();
   },
   'show-settings': function(t, options) {
-    t.get('board', 'public', 'members').then(function(d) {
+    t.get('board').then(function(d) {
       console.log('hmmmmmmmmmmmmm')
       console.log({ d })
     })
