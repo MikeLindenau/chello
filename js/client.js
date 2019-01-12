@@ -89,6 +89,7 @@ var getBadges = function(t) {
     .card('name')
     .get('name')
     .then(function(cardName) {
+      console.log({ context: t.getContext() })
       console.log('We just loaded the card name for fun: ' + cardName)
 
       return [
@@ -409,7 +410,6 @@ TrelloPowerUp.initialize({
     // throw t.NotHandled();
   },
   'show-settings': function(t, options) {
-    console.log({ context: t.getContext() })
     // when a user clicks the gear icon by your Power-Up in the Power-Ups menu
     // what should Trello show. We highly recommend the popup in this case as
     // it is the least disruptive, and fits in well with the rest of Trello's UX
