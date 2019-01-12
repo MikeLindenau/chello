@@ -409,9 +409,9 @@ TrelloPowerUp.initialize({
     // throw t.NotHandled();
   },
   'show-settings': function(t, options) {
-    t.get('board', 'private').then(function(d) {
+    t.get('board', 'private', 'members').then(function(d) {
       console.log('hmmmmmmmmmmmmm')
-      console.log(d)
+      console.log({ d })
     })
     // when a user clicks the gear icon by your Power-Up in the Power-Ups menu
     // what should Trello show. We highly recommend the popup in this case as
