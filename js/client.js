@@ -409,6 +409,10 @@ TrelloPowerUp.initialize({
     // throw t.NotHandled();
   },
   'show-settings': function(t, options) {
+    t.get('board', 'private').then(function(d) {
+      console.log('hmmmmmmmmmmmmm')
+      console.log(d)
+    })
     // when a user clicks the gear icon by your Power-Up in the Power-Ups menu
     // what should Trello show. We highly recommend the popup in this case as
     // it is the least disruptive, and fits in well with the rest of Trello's UX
@@ -436,14 +440,8 @@ TrelloPowerUp.initialize({
     // they click on the Power-Up's gear icon in the settings. The 'show-authorization' capability
     // below determines what should happen when the user clicks "Authorize Account"
 
-    t.get('board', 'private').then(function(d) {
-      console.log('hmmmmmmmmmmmmm')
-      console.log(d)
-    })
-
     // For instance, if your Power-Up requires a token to be set for the member you could do the following:
     return t.get('member', 'private', 'token').then(function(token) {
-      console.log(token)
       if (token) {
         return { authorized: true }
       }
