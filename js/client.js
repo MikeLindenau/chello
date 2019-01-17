@@ -334,24 +334,10 @@ TrelloPowerUp.initialize({
     // we can let Trello know like so:
     // throw t.NotHandled();
   },
-  'board-buttons': function(t, options) {
-    return [
-      {
-        // we can either provide a button that has a callback function
-        // that callback function should probably open a popup, overlay, or boardBar
-        icon: WHITE_ICON,
-        text: 'Popup',
-        callback: boardButtonCallback
-      },
-      {
-        // or we can also have a button that is just a simple url
-        // clicking it will open a new tab at the provided url
-        icon: WHITE_ICON,
-        text: 'URL',
-        url: 'https://trello.com/inspiration',
-        target: 'Inspiring Boards' // optional target for above url
-      }
-    ]
+  'board-buttons': function(t, opts) {
+    return t.board('all').then(function(board) {
+      console.log(JSON.stringify(board, null, 2))
+    })
   },
   'card-badges': function(t, options) {
     return getBadges(t)
