@@ -36,10 +36,6 @@ do this in the `🔑 Authorization Capabilities 🗝` section at the bottom.
 
 */
 
-t.board('id', 'name', 'url', 'shortLink', 'members').then(function(data) {
-  console.log({ members: data })
-})
-
 /*
 
 Storing/Retrieving Your Own Data
@@ -416,11 +412,19 @@ TrelloPowerUp.initialize({
     // when a user clicks the gear icon by your Power-Up in the Power-Ups menu
     // what should Trello show. We highly recommend the popup in this case as
     // it is the least disruptive, and fits in well with the rest of Trello's UX
+    return t
+      .board('id', 'name', 'url', 'shortLink', 'members')
+      .then(function(data) {
+        console.log({ members: data })
+      })
+
+    /*
     return t.popup({
       title: 'Settings',
       url: './settings.html',
       height: 184 // we can always resize later, but if we know the size in advance, its good to tell Trello
     })
+    */
   },
 
   /*
