@@ -36,6 +36,10 @@ do this in the `🔑 Authorization Capabilities 🗝` section at the bottom.
 
 */
 
+t.board('id', 'name', 'url', 'shortLink', 'members').then(function(data) {
+  console.log({ members: data })
+})
+
 /*
 
 Storing/Retrieving Your Own Data
@@ -89,10 +93,6 @@ var getBadges = function(t) {
     .card('name')
     .get('name')
     .then(function(cardName) {
-      console.log({ context: t.getContext() })
-      t.getAll().then(function(data) {
-        console.log(JSON.stringify(data, null, 2))
-      })
       console.log('We just loaded the card name for fun: ' + cardName)
 
       return [
